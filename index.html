@@ -3,30 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mindstitch: understand the code your AI writes</title>
-  <meta name="description" content="Mindstitch is a Claude Code plugin and VS Code extension that explains the new concepts your AI coding agent introduces, in your own code, while it builds. Launching January 2027.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>MindStitch: understand the code your AI writes</title>
+  <meta name="description" content="MindStitch is a Claude Code plugin and VS Code extension that explains the new concepts your AI coding agent introduces, in your own code, while it builds. Launching January 2027.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0F162F">
   <link rel="canonical" href="https://mindstitch.dev/">
-  <meta property="og:title" content="Mindstitch: understand the code your AI writes">
-  <meta property="og:description" content="Learn what your AI just built, while it builds it.">
+  <meta property="og:title" content="MindStitch: understand the code your AI writes">
+  <meta property="og:description" content="Understand the code your AI writes. Short explanations of every new concept your coding agent brings in, right where you work.">
   <meta property="og:url" content="https://mindstitch.dev/">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="styles.css">
+  <meta property="og:image" content="https://mindstitch.dev/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="Mindstitch home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/><path d="M7 21c3-9 6-9 9 0s6 9 9 0" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3.2 2.6"/><circle cx="7" cy="21" r="2" fill="var(--accent)"/><circle cx="25" cy="21" r="2" fill="var(--accent)"/></svg>
-      Mindstitch
+    <a class="brand" href="/" aria-label="MindStitch home">
+      <picture>
+        <source srcset="/assets/logo-mark-indigo.png" media="(prefers-color-scheme: light)">
+        <img src="/assets/logo-mark.png" alt="" width="30" height="31">
+      </picture>
+      <span class="wm"><span class="m">Mind</span>Stitch</span>
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#teams">For teams</a>
       <a href="#privacy">Privacy</a>
       <a href="#pricing">Pricing</a>
-      <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the beta</a>
+      <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=MindStitch%20beta%20access">Join the beta</a>
     </nav>
   </div>
 </header>
@@ -37,16 +44,17 @@
     <div class="wrap">
       <div>
         <span class="eyebrow">● Private beta · launching January 2027</span>
-        <h1 id="hero-title">Learn what your AI just built, <em>while it builds it.</em></h1>
-        <p class="lede">When your coding agent brings in something you haven't met before, Mindstitch shows a short card explaining what it is and why it's in <em>your</em> code. Then it helps you prove you understood it.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the private beta</a>
+        <h1 id="hero-title">Understand the code your <span class="l">AI</span> <span class="c">writes.</span></h1>
+        <p class="lede">Your AI agent ships new concepts faster than you can learn them. MindStitch stitches the gaps: when your agent brings in something new, you get a short card explaining what it is and why it's in <em>your</em> code, then a quick check to prove you got it.</p>
+        <svg class="stitch" viewBox="0 0 360 24" preserveAspectRatio="none" aria-hidden="true"><circle cx="6" cy="12" r="5"/><path d="M6 12 Q 50 0 95 12 T 183 12 T 271 12 T 354 12"/><circle cx="354" cy="12" r="5"/></svg>
+        <div class="cta-row" style="margin-top:30px">
+          <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=MindStitch%20beta%20access">Join the private beta</a>
           <a class="btn" href="#how">See how it works</a>
           <p class="small">Works in Claude Code, VS Code, Cursor and Windsurf. Free for solo developers.</p>
         </div>
       </div>
 
-      <div class="terminal" role="img" aria-label="A Claude Code session: the agent adds refresh token rotation to a login API, and a Mindstitch card appears explaining refresh token rotation.">
+      <div class="terminal" role="img" aria-label="A Claude Code session: the agent adds refresh token rotation to a login API, and a MindStitch card appears explaining refresh token rotation.">
         <div class="term-bar"><span></span><span></span><span></span><b>claude — ~/projects/shop-api</b></div>
         <div class="term-body" id="term" aria-hidden="true">
 <div class="t-line t-user">&gt; add refresh tokens to the login endpoint</div>
@@ -56,7 +64,7 @@
 <div class="t-line"><span class="t-add">  +     family = revoke(old_token)</span></div>
 <div class="t-line"><span class="t-add">  +     return issue_pair(family=family)</span></div>
 <div class="t-line t-ok">✓ Done. Login now returns an access + refresh token pair.</div>
-<div class="t-line t-card"><span class="t-title">◆ Mindstitch · Refresh token rotation</span>
+<div class="t-line t-card"><span class="t-title">◆ MindStitch · Refresh token rotation</span>
 Every time a refresh token is used, it's swapped for a new one and the old one dies. If a stolen token is ever reused, the whole family is revoked.
 <span class="t-dim">Here: auth/tokens.py, rotate_refresh_token()</span>
 <span class="t-link">Read more &amp; prove it → mindstitch.dev/c/8f2a</span></div>
@@ -77,9 +85,9 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
       <div class="meter" aria-label="Illustration of comprehension debt">
         <div class="meter-row"><span>Concepts your agent introduced</span><b>everything</b></div>
         <div class="bar"><i style="width:100%"></i></div>
-        <div class="meter-row"><span>Concepts you understand without Mindstitch</span><b>some</b></div>
+        <div class="meter-row"><span>Concepts you understand without MindStitch</span><b>some</b></div>
         <div class="bar"><i style="width:38%"></i></div>
-        <div class="meter-row"><span>With Mindstitch, one card at a time</span><b>closing the gap</b></div>
+        <div class="meter-row"><span>With MindStitch, one card at a time</span><b>closing the gap</b></div>
         <div class="bar accent"><i style="width:82%"></i></div>
         <p class="note">Illustration, not measured data.</p>
       </div>
@@ -96,17 +104,17 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
         <div class="panel">
           <div class="step-num">1</div>
           <h3>Install and sign in</h3>
-          <p>Add the plugin from the Mindstitch marketplace in Claude Code, run <code>/mindstitch:login</code>, and approve in your browser. That's it.</p>
+          <p>Add the plugin from the MindStitch marketplace in Claude Code, run <code>/mindstitch:login</code>, and approve in your browser. That's it.</p>
         </div>
         <div class="panel">
           <div class="step-num">2</div>
           <h3>Code as usual</h3>
-          <p>At the end of each turn, Mindstitch looks at what changed. When something new shows up, you get a short card, right in the terminal or your editor's sidebar.</p>
+          <p>At the end of each turn, MindStitch looks at what changed. When something new shows up, you get a short card, right in the terminal or your editor's sidebar.</p>
         </div>
         <div class="panel">
           <div class="step-num">3</div>
           <h3>Prove you get it</h3>
-          <p>Explain the concept in your own words in a short check. Mark things you already know, and Mindstitch stops telling you about them.</p>
+          <p>Explain the concept in your own words in a short check. Mark things you already know, and MindStitch stops telling you about them.</p>
         </div>
       </div>
     </div>
@@ -116,8 +124,8 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
   <section class="alt" aria-labelledby="card-title">
     <div class="wrap sample">
       <div>
-        <div class="kicker">A Mindstitch card</div>
-        <h2 id="card-title">Not a tutorial. An explanation of <em style="font-style:normal;color:var(--accent)">your</em> code.</h2>
+        <div class="kicker">A MindStitch card</div>
+        <h2 id="card-title">Not a tutorial. An explanation of <em style="font-style:normal;color:var(--coral)">your</em> code.</h2>
         <p class="section-lede" style="margin-bottom:24px">Generic docs tell you what something is. A card tells you why it's in the file you're looking at, using the lines your agent just wrote.</p>
         <ul class="checklist">
           <li><span><b>Only what's new to you.</b> Set your level once; things you know are skipped.</span></li>
@@ -189,7 +197,7 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
         </div>
         <div class="panel">
           <h3>Only the changed lines</h3>
-          <p>Mindstitch sends the lines your agent changed plus a little context, never whole files or repositories. Pause it any time, or turn it off for a client's repo.</p>
+          <p>MindStitch sends the lines your agent changed plus a little context, never whole files or repositories. Pause it any time, or turn it off for a client's repo.</p>
         </div>
         <div class="panel">
           <h3>Hosted in the EU</h3>
@@ -204,7 +212,7 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
     <div class="wrap">
       <div class="kicker">Pricing</div>
       <h2 id="pricing-title">Free for solo developers. Fair for teams.</h2>
-      <p class="section-lede">You only pay for people who actually use Mindstitch that month. Invited but inactive members are free.</p>
+      <p class="section-lede">You only pay for people who actually use MindStitch that month. Invited but inactive members are free.</p>
       <div class="pricing">
         <div class="plan">
           <h3>Free</h3>
@@ -278,8 +286,8 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
       <div class="kicker">FAQ</div>
       <h2 id="faq-title">Questions</h2>
       <details>
-        <summary>Does Mindstitch slow down my agent?</summary>
-        <p>No. The plugin collects changes locally and sends them once at the end of a turn, in well under a second. If Mindstitch is unreachable, your session carries on and events are sent later.</p>
+        <summary>Does MindStitch slow down my agent?</summary>
+        <p>No. The plugin collects changes locally and sends them once at the end of a turn, in well under a second. If MindStitch is unreachable, your session carries on and events are sent later.</p>
       </details>
       <details>
         <summary>Which tools does it work with?</summary>
@@ -306,8 +314,8 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
       <h2 id="final-title">Keep the speed. Keep the understanding.</h2>
       <p class="section-lede">Join the private beta. We're onboarding a small number of solo developers and teams before launch.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the private beta</a>
-        <a class="btn" href="mailto:info@mindstitch.dev?subject=Mindstitch%20for%20my%20team">Talk to us about your team</a>
+        <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=MindStitch%20beta%20access">Join the private beta</a>
+        <a class="btn" href="mailto:info@mindstitch.dev?subject=MindStitch%20for%20my%20team">Talk to us about your team</a>
       </div>
     </div>
   </section>
@@ -316,7 +324,7 @@ Every time a refresh token is used, it's swapped for a new one and the old one d
 <footer>
   <div class="wrap">
     <div>
-      <strong style="color:var(--text)">Mindstitch</strong><br>
+      <strong style="color:var(--text)"><span style="color:var(--brand)">Mind</span>Stitch</strong><br>
       Made in Kosovo · <a href="mailto:info@mindstitch.dev">info@mindstitch.dev</a>
     </div>
     <nav aria-label="Legal">
