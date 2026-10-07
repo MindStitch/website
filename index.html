@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mindstitch: understand the code your AI writes</title>
+  <meta name="description" content="Mindstitch is a Claude Code plugin and VS Code extension that explains the new concepts your AI coding agent introduces, in your own code, while it builds. Launching January 2027.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://mindstitch.dev/">
+  <meta property="og:title" content="Mindstitch: understand the code your AI writes">
+  <meta property="og:description" content="Learn what your AI just built, while it builds it.">
+  <meta property="og:url" content="https://mindstitch.dev/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mindstitch home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/><path d="M7 21c3-9 6-9 9 0s6 9 9 0" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3.2 2.6"/><circle cx="7" cy="21" r="2" fill="var(--accent)"/><circle cx="25" cy="21" r="2" fill="var(--accent)"/></svg>
+      Mindstitch
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#teams">For teams</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the beta</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">● Private beta · launching January 2027</span>
+        <h1 id="hero-title">Learn what your AI just built, <em>while it builds it.</em></h1>
+        <p class="lede">When your coding agent brings in something you haven't met before, Mindstitch shows a short card explaining what it is and why it's in <em>your</em> code. Then it helps you prove you understood it.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the private beta</a>
+          <a class="btn" href="#how">See how it works</a>
+          <p class="small">Works in Claude Code, VS Code, Cursor and Windsurf. Free for solo developers.</p>
+        </div>
+      </div>
+
+      <div class="terminal" role="img" aria-label="A Claude Code session: the agent adds refresh token rotation to a login API, and a Mindstitch card appears explaining refresh token rotation.">
+        <div class="term-bar"><span></span><span></span><span></span><b>claude — ~/projects/shop-api</b></div>
+        <div class="term-body" id="term" aria-hidden="true">
+<div class="t-line t-user">&gt; add refresh tokens to the login endpoint</div>
+<div class="t-line t-dim">● Reading auth/views.py</div>
+<div class="t-line t-dim">● Editing auth/tokens.py</div>
+<div class="t-line"><span class="t-add">  + def rotate_refresh_token(old_token):</span></div>
+<div class="t-line"><span class="t-add">  +     family = revoke(old_token)</span></div>
+<div class="t-line"><span class="t-add">  +     return issue_pair(family=family)</span></div>
+<div class="t-line t-ok">✓ Done. Login now returns an access + refresh token pair.</div>
+<div class="t-line t-card"><span class="t-title">◆ Mindstitch · Refresh token rotation</span>
+Every time a refresh token is used, it's swapped for a new one and the old one dies. If a stolen token is ever reused, the whole family is revoked.
+<span class="t-dim">Here: auth/tokens.py, rotate_refresh_token()</span>
+<span class="t-link">Read more &amp; prove it → mindstitch.dev/c/8f2a</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="alt" aria-labelledby="debt-title">
+    <div class="wrap debt">
+      <div>
+        <div class="kicker">The problem</div>
+        <h2 id="debt-title">AI writes the code. Who understands it?</h2>
+        <p>Coding agents ship features in minutes, and they bring in patterns, libraries and ideas the developer never chose. The code works, so nobody stops to learn it.</p>
+        <p>Then something breaks at 2 a.m., and nobody on the team can explain what the code does. We call that gap <strong>comprehension debt</strong>: concepts that landed in your codebase versus concepts someone actually understands.</p>
+      </div>
+      <div class="meter" aria-label="Illustration of comprehension debt">
+        <div class="meter-row"><span>Concepts your agent introduced</span><b>everything</b></div>
+        <div class="bar"><i style="width:100%"></i></div>
+        <div class="meter-row"><span>Concepts you understand without Mindstitch</span><b>some</b></div>
+        <div class="bar"><i style="width:38%"></i></div>
+        <div class="meter-row"><span>With Mindstitch, one card at a time</span><b>closing the gap</b></div>
+        <div class="bar accent"><i style="width:82%"></i></div>
+        <p class="note">Illustration, not measured data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="kicker">How it works</div>
+      <h2 id="how-title">Three steps. Two minutes to set up.</h2>
+      <p class="section-lede">No tokens to copy, no environment variables. Install it, sign in in the browser, and keep coding.</p>
+      <div class="grid-3">
+        <div class="panel">
+          <div class="step-num">1</div>
+          <h3>Install and sign in</h3>
+          <p>Add the plugin from the Mindstitch marketplace in Claude Code, run <code>/mindstitch:login</code>, and approve in your browser. That's it.</p>
+        </div>
+        <div class="panel">
+          <div class="step-num">2</div>
+          <h3>Code as usual</h3>
+          <p>At the end of each turn, Mindstitch looks at what changed. When something new shows up, you get a short card, right in the terminal or your editor's sidebar.</p>
+        </div>
+        <div class="panel">
+          <div class="step-num">3</div>
+          <h3>Prove you get it</h3>
+          <p>Explain the concept in your own words in a short check. Mark things you already know, and Mindstitch stops telling you about them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample card -->
+  <section class="alt" aria-labelledby="card-title">
+    <div class="wrap sample">
+      <div>
+        <div class="kicker">A Mindstitch card</div>
+        <h2 id="card-title">Not a tutorial. An explanation of <em style="font-style:normal;color:var(--accent)">your</em> code.</h2>
+        <p class="section-lede" style="margin-bottom:24px">Generic docs tell you what something is. A card tells you why it's in the file you're looking at, using the lines your agent just wrote.</p>
+        <ul class="checklist">
+          <li><span><b>Only what's new to you.</b> Set your level once; things you know are skipped.</span></li>
+          <li><span><b>Short by design.</b> A few sentences in the terminal, more on the web if you want it.</span></li>
+          <li><span><b>Builds a history.</b> See what you've met, what you know, and what keeps coming back.</span></li>
+        </ul>
+      </div>
+      <article class="card" aria-label="Example card: Refresh token rotation">
+        <div class="card-head">
+          <span class="chip">auth</span>
+          <span class="chip new">new this session</span>
+        </div>
+        <h3>Refresh token rotation</h3>
+        <p>A refresh token gets a user a new access token without logging in again. With rotation, each refresh token works exactly once: using it returns a fresh pair and invalidates the old one.</p>
+        <div class="why">
+          <strong>Why it's here</strong>
+          <p>Your login now issues long-lived refresh tokens. Rotation means a leaked token is only useful until its owner refreshes, and reuse of an old one revokes the whole chain.</p>
+        </div>
+<pre class="snippet"><span class="c"># auth/tokens.py</span>
+<span class="k">def</span> rotate_refresh_token(old_token):
+    family = revoke(old_token)  <span class="c"># reuse → revoke family</span>
+    <span class="k">return</span> issue_pair(family=family)</pre>
+        <div class="card-actions">
+          <span class="primary">Prove it</span>
+          <span>I know this</span>
+          <span>Explain differently</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Teams -->
+  <section id="teams" aria-labelledby="teams-title">
+    <div class="wrap">
+      <div class="kicker">For teams</div>
+      <h2 id="teams-title">Know your team understands what it ships.</h2>
+      <p class="section-lede">Managers see where understanding is strong and where it's thin, without reading anyone's code or answers.</p>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Team insights</h3>
+          <p>Which concepts keep showing up, which ones the team has verified, and which code areas only one person understands.</p>
+        </div>
+        <div class="panel">
+          <h3>Fair by design</h3>
+          <p>Managers see progress and scores, never raw code or typed answers. Every member can open a "What my team sees" page and check for themselves.</p>
+        </div>
+        <div class="panel">
+          <h3>One-line rollout</h3>
+          <p>Invite by email or link, or verify your domain so colleagues join automatically. Org settings apply to every laptop; nothing to configure per developer.</p>
+        </div>
+        <div class="panel">
+          <h3>Enterprise controls</h3>
+          <p>SAML/OIDC single sign-on, SCIM user sync, an audit log, data retention rules, a "no code stored" mode, and a self-hosted edition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" class="alt" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <div class="kicker">Your code</div>
+      <h2 id="privacy-title">As little code as possible leaves your laptop.</h2>
+      <p class="section-lede">Companies only install tools they trust with their code. So we send less, store less, and let you decide.</p>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Filtered on your machine</h3>
+          <p>Secrets like API keys and passwords are replaced with <code>[REDACTED]</code> before anything is sent. <code>.env</code> files, keys and anything in <code>.gitignore</code> or <code>.mindstitchignore</code> are skipped.</p>
+        </div>
+        <div class="panel">
+          <h3>Only the changed lines</h3>
+          <p>Mindstitch sends the lines your agent changed plus a little context, never whole files or repositories. Pause it any time, or turn it off for a client's repo.</p>
+        </div>
+        <div class="panel">
+          <h3>Hosted in the EU</h3>
+          <p>Data is stored in Frankfurt, encrypted at rest. Teams can set how long code snippets are kept, or store none at all. Our AI provider doesn't train on your data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="kicker">Pricing</div>
+      <h2 id="pricing-title">Free for solo developers. Fair for teams.</h2>
+      <p class="section-lede">You only pay for people who actually use Mindstitch that month. Invited but inactive members are free.</p>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Free</h3>
+          <p class="who">Solo developers getting started</p>
+          <div class="price">€0</div>
+          <p class="price-note">Forever</p>
+          <ul>
+            <li>Unlimited cards from the concept catalog</li>
+            <li>Unlimited live cards with your own Anthropic key, or 20/month with ours</li>
+            <li>5 comprehension checks/month</li>
+            <li>Community support</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h3>Solo Pro</h3>
+          <p class="who">Developers who learn every day</p>
+          <div class="price">€5 <small>/ month</small></div>
+          <p class="price-note">&nbsp;</p>
+          <ul>
+            <li>1,000 live cards/month</li>
+            <li>Unlimited comprehension checks</li>
+            <li>Full learning history</li>
+            <li>Email support</li>
+          </ul>
+        </div>
+        <div class="plan featured">
+          <span class="badge">Most teams</span>
+          <h3>Team</h3>
+          <p class="who">Teams of 2 to 200</p>
+          <div class="price">€15 <small>/ seat / month</small></div>
+          <p class="price-note">Billed yearly, or €19 billed monthly</p>
+          <ul>
+            <li>300 live cards per seat/month, pooled</li>
+            <li>Team insights and briefings</li>
+            <li>Manager, Admin and Member roles</li>
+            <li>Email support within 2 business days</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h3>Business</h3>
+          <p class="who">Teams that need more control</p>
+          <div class="price">€29 <small>/ seat / month</small></div>
+          <p class="price-note">14-day free trial, no card needed</p>
+          <ul>
+            <li>600 live cards per seat/month, pooled</li>
+            <li>Join by company domain, required MFA</li>
+            <li>Retention controls and no-code-stored mode</li>
+            <li>Email support within 1 business day</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h3>Enterprise</h3>
+          <p class="who">200+ developers, security reviews</p>
+          <div class="price">from €15k <small>/ year</small></div>
+          <p class="price-note">Yearly contract, invoiced</p>
+          <ul>
+            <li>SSO (SAML/OIDC), SCIM, Auditor role</li>
+            <li>Audit log export</li>
+            <li>Your own AI key, Bedrock or Vertex</li>
+            <li>Self-hosted option, SLA, named contact</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pricing-foot">Prices in EUR. VAT may apply depending on your location. 50% off for students and open-source maintainers; free Team plan for university courses. Payments are processed by our reseller, Paddle. See our <a href="terms.html">Terms</a> and <a href="refund.html">Refund Policy</a>.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt" aria-labelledby="faq-title">
+    <div class="wrap narrow">
+      <div class="kicker">FAQ</div>
+      <h2 id="faq-title">Questions</h2>
+      <details>
+        <summary>Does Mindstitch slow down my agent?</summary>
+        <p>No. The plugin collects changes locally and sends them once at the end of a turn, in well under a second. If Mindstitch is unreachable, your session carries on and events are sent later.</p>
+      </details>
+      <details>
+        <summary>Which tools does it work with?</summary>
+        <p>At launch: Claude Code (plugin) and VS Code, Cursor, Windsurf and VSCodium (extension). Support for other coding agents with hooks is planned.</p>
+      </details>
+      <details>
+        <summary>Can my manager read my code or my answers?</summary>
+        <p>No. Managers see which concepts you've met and your check scores. They never see code snippets, and they only see a typed answer if it's flagged for review.</p>
+      </details>
+      <details>
+        <summary>Can we run it on our own servers?</summary>
+        <p>Yes, on the Enterprise plan. The self-hosted edition is the same software we run, packaged for Docker Compose or Kubernetes, and it can work fully offline with catalog-only cards.</p>
+      </details>
+      <details>
+        <summary>When can I use it?</summary>
+        <p>We're in private beta now and launching publicly in January 2027. Email us to get early access.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap">
+      <h2 id="final-title">Keep the speed. Keep the understanding.</h2>
+      <p class="section-lede">Join the private beta. We're onboarding a small number of solo developers and teams before launch.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the private beta</a>
+        <a class="btn" href="mailto:info@mindstitch.dev?subject=Mindstitch%20for%20my%20team">Talk to us about your team</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:var(--text)">Mindstitch</strong><br>
+      Made in Kosovo · <a href="mailto:info@mindstitch.dev">info@mindstitch.dev</a>
+    </div>
+    <nav aria-label="Legal">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refund.html">Refunds</a>
+      <a href="/.well-known/security.txt">Security</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Reveal the terminal lines one by one, then loop. Respects reduced motion.
+  (function () {
+    var lines = Array.prototype.slice.call(document.querySelectorAll('#term .t-line'));
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { lines.forEach(function (l) { l.classList.add('on'); }); return; }
+    var delays = [300, 900, 600, 350, 250, 250, 700, 1100];
+    function run() {
+      lines.forEach(function (l) { l.classList.remove('on'); });
+      var t = 0;
+      lines.forEach(function (l, i) { t += delays[i] || 400; setTimeout(function () { l.classList.add('on'); }, t); });
+      setTimeout(run, t + 6500);
+    }
+    run();
+  })();
+</script>
+</body>
+</html>

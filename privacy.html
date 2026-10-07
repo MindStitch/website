@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Mindstitch</title>
+  <meta name="description" content="How Mindstitch collects, uses and protects personal data and code.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mindstitch home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/><path d="M7 21c3-9 6-9 9 0s6 9 9 0" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3.2 2.6"/><circle cx="7" cy="21" r="2" fill="var(--accent)"/><circle cx="25" cy="21" r="2" fill="var(--accent)"/></svg>
+      Mindstitch
+    </a>
+    <nav class="nav-links" aria-label="Main"><a href="/#privacy">How we handle code</a><a class="btn btn-primary" href="mailto:info@mindstitch.dev?subject=Mindstitch%20beta%20access">Join the beta</a></nav>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap narrow">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 7, 2026</p>
+    <!-- DRAFT: remove this box after a lawyer has reviewed the text and the placeholders are filled. -->
+    <div class="draft">Draft. This policy will be finalized before the public launch. Questions: <a href="mailto:info@mindstitch.dev">info@mindstitch.dev</a></div>
+
+    <h2>1. Who is responsible</h2>
+    <p>The controller of your personal data is <span class="ph">[Company legal name]</span>, <span class="ph">[registered address]</span>, Republic of Kosovo. Privacy contact: <a href="mailto:info@mindstitch.dev">info@mindstitch.dev</a>. When an organization (for example, your employer) gives you access to Mindstitch, that organization is the controller of its members' data and we process it on its behalf under a Data Processing Agreement.</p>
+
+    <h2>2. This website</h2>
+    <p>This website sets no cookies, runs no analytics or tracking, and loads no third-party fonts or scripts. Our host keeps standard server logs (such as IP address and pages requested) for security, for a short period. If you email us, we use your message and address only to reply.</p>
+
+    <h2>3. What the Service processes</h2>
+    <table>
+      <thead><tr><th>Data</th><th>Why</th><th>Legal basis</th></tr></thead>
+      <tbody>
+        <tr><td>Account data: name, email, sign-in method, organization and role</td><td>To run your account and organization</td><td>Contract</td></tr>
+        <tr><td>Code changes: the lines your AI agent changed, plus about 10 lines of context, with secrets redacted on your machine first</td><td>To detect concepts and write cards for you</td><td>Contract</td></tr>
+        <tr><td>Learning data: cards, concept status, check answers and scores</td><td>To show your progress and, for teams, insights as described below</td><td>Contract; for team insights, the organization's legitimate interest</td></tr>
+        <tr><td>Usage and device data: client version, timestamps, error reports</td><td>To keep the Service secure, reliable and within budget</td><td>Legitimate interest</td></tr>
+        <tr><td>Billing data: handled by Paddle, our reseller; we receive plan, seat count and country, not full card details</td><td>To charge for paid plans and meet tax rules</td><td>Contract; legal obligation</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. What we never do</h2>
+    <ul>
+      <li>We never send whole files or repositories, and we skip files matched by <code>.gitignore</code>, <code>.mindstitchignore</code> and common secret files (such as <code>.env</code> and key files).</li>
+      <li>We never sell personal data or code, and we don't use it to train AI models. Our AI provider does not train on data sent through its API.</li>
+      <li>We never include your name or email in AI prompts.</li>
+    </ul>
+
+    <h2>5. Who can see what inside an organization</h2>
+    <p>Managers and admins see concept status, check scores and card titles for the people they're responsible for. They do not see code snippets, and they see a typed check answer only if it has been flagged for review. Every member can see exactly what their manager sees.</p>
+
+    <h2>6. Where data is stored and who processes it</h2>
+    <p>Service data is stored in the European Union (AWS, Frankfurt). We use these subprocessors:</p>
+    <table>
+      <thead><tr><th>Provider</th><th>Purpose</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr><td>Amazon Web Services</td><td>Hosting, database, storage</td><td>EU (Frankfurt)</td></tr>
+        <tr><td>Anthropic</td><td>AI processing of redacted code changes</td><td>United States</td></tr>
+        <tr><td>Paddle</td><td>Payments, invoicing, tax</td><td>United Kingdom / EU</td></tr>
+        <tr><td>Sentry</td><td>Error monitoring</td><td>EU or United States</td></tr>
+        <tr><td><span class="ph">[Email provider]</span></td><td>Sign-in and service emails</td><td><span class="ph">[location]</span></td></tr>
+      </tbody>
+    </table>
+    <p>Transfers outside the EU/EEA are protected by the European Commission's Standard Contractual Clauses or an equivalent safeguard. Enterprise customers can use their own AI account (Anthropic, AWS Bedrock or Google Vertex) so that code never reaches ours.</p>
+
+    <h2>7. How long we keep data</h2>
+    <ul>
+      <li>Code snippets on cards: 30 days by default. Organizations can choose 0 to 365 days, or a "no code stored" mode.</li>
+      <li>Raw change events: 90 days. Aggregated counts behind insights are kept while the account exists.</li>
+      <li>Audit logs: 1 year.</li>
+      <li>After you delete your account, your data is deleted within 30 days, and from backups when they rotate (35 days).</li>
+    </ul>
+
+    <h2>8. Security</h2>
+    <p>Data is encrypted in transit (TLS 1.2+) and at rest. Each organization's data is isolated in the application and in the database. Our staff have no standing access to customer data. To report a vulnerability, see our <a href="/.well-known/security.txt">security.txt</a>.</p>
+
+    <h2>9. Your rights</h2>
+    <p>You can access, correct, export (JSON) or delete your data, object to or restrict processing, and withdraw consent where we rely on it. Most of this is self-service in your account settings; otherwise email <a href="mailto:info@mindstitch.dev">info@mindstitch.dev</a> and we'll answer within 30 days. If your account belongs to an organization, we may forward your request to it. You can complain to the Information and Privacy Agency of Kosovo or, in the EU, to your local data protection authority.</p>
+
+    <h2>10. Children</h2>
+    <p>Mindstitch is not intended for anyone under 16.</p>
+
+    <h2>11. Changes</h2>
+    <p>We'll post updates here and, for material changes, tell account holders by email before they take effect.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:var(--text)">Mindstitch</strong><br>Made in Kosovo · <a href="mailto:info@mindstitch.dev">info@mindstitch.dev</a></div>
+    <nav aria-label="Legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a><a href="/.well-known/security.txt">Security</a></nav>
+  </div>
+</footer>
+</body>
+</html>

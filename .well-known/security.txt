@@ -1,0 +1,4 @@
+Contact: mailto:info@mindstitch.dev
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: en, sq
+Canonical: https://mindstitch.dev/.well-known/security.txt
